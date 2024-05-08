@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css">
+    <script type="script" src="../js/bootstrap.bundle.min.js"></script>
+    <script src="datepicker.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../themes/smoothness/jquery-ui.css" media="all">
+    <link rel="stylesheet" href="datepicker.min.css">
+
+
+
+</head>
+<body style="padding:2%;">
+    
+
+<div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Node-Mongo</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Agregar Persona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+                role="tab" aria-controls="nav-home" aria-selected="true">Agregar Persona</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <br>
+
+            <form action="/newpersona" method="post">
+
+                <div class="row justify-content-md-center">
+
+                    <div class="col col-lg-6">
+
+
+                        <div class="mb-3">
+                            <label for="rut" class="form-label">Rut</label>
+                            <input type="text" class="form-control" id="rut" name="rut" aria-describedby="rutHelp">
+                            <div id="rutHelp" class="form-text">xx.xxx.xxx-x</div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="nombres" class="form-label">Nombres</label>
+                            <input type="text" class="form-control" id="nombres" name="nombres">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="apellidos" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidos" name="apellidos">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fechanacimiento" class="form-label">Fecha Nacimiento</label>
+                            <input type="text" class="form-control" id="fechanacimiento" name="fechanacimiento"
+                                  aria-describedby="fechanacimientoHelp">
+
+
+                            <div id="fechanacimientoHelp" class="form-text">10-10-2024</div>
+                        </div>
+
+
+
+                        <button type="submit" class="btn btn-primary">Grabar Persona</button>
+                                   
+                        <a href="/" class="btn btn-danger active" role="button" data-bs-toggle="button" aria-pressed="true">Cancelar</a>
+
+                   
+                   
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+<script>
+    $(function () {
+        $("#fechanacimiento").datepicker({
+            todayBtn: "linked",
+            language: "es",
+            autoclose: true,
+            todayHighlight: true,
+            dateFormat: 'dd/mm/yy'
+        });
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,18 +1,26 @@
 {
-  "name": "crud-with-mysql-and-node-js",
-  "type": "module",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "myapp",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-    "mysql2": "^3.9.3"
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.3",
+    "cookie-parser": "~1.4.4",
+    "dayjs": "^1.11.10",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.7.1",
+    "jquery-ui": "^1.13.2",
+    "js-datepicker": "^5.18.2",
+    "moment": "^2.30.1",
+    "mongoose": "^8.3.2",
+    "morgan": "~1.9.1",
+    "mysql2": "^3.9.5",
+    "popper.js": "^1.16.1"
   }
 }

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  
+  <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css">
+  <script type="script" src="./js/bootstrap.bundle.min.js"></script>
+  
+  </head>
+
+<body style="padding:2%;">
+
+  <div class="container">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Node-Mongo</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/newPersona">Agregar Persona</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+          role="tab" aria-controls="nav-home" aria-selected="true">Lista Personas</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+         
+
+
+
+  <div class="transactions-table" style="border:2px solid black;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Rut</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Fecha de Nacimiento</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <!-- index.ejs file -->
+      <tbody>
+        <% if(docs.length){ for(var i=0; i< docs.length; i++) {%>
+          <tr>
+            <td>
+              <%= docs[i].rut %>
+            </td>
+            <td>
+              <%= docs[i].nombres %>
+            </td>
+            <td>
+              <%= docs[i].apellidos %>
+            </td>
+            <td>
+               <%=moment(docs[i].fechanacimiento).format('DD/MM/YYYY') %>
+            </td>
+            <td>
+                      
+                <button class="btn btn-primary">Edit</button>
+                <button class="btn btn-warning">Delete</button>
+                <button class="btn btn-info">Propiedades</button>
+                <button class="btn btn-danger">Logo Empresa</button>
+
+                <a href="/detailPersona?rut=<%= docs[i].rut %>" class="btn btn-success active" role="button" data-bs-toggle="button" aria-pressed="true">Ver Detalle</a>
+
+
+    
+           
+            </td>
+          </tr>
+          <% }} %>
+      </tbody>
+
+
+
+    </table>
+  </div>
+
+  </div>
+  
+</div>
+
+
+</body>
+</html>
